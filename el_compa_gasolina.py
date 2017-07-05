@@ -7,17 +7,17 @@ def main():
     while '1' or '2' or '3':
         gas = input(msg)
         if gas == '1':
-            amount = input('How much gas would you like? ')
+            amount = input('How many gallons would you like? ')
             el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
         elif gas == '2':
-            amount = input('How much gas would you like? ')
+            amount = input('How many gallons would you like? ')
             el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
         elif gas == '3':
-            amount = input('How much gas would you like? ')
+            amount = input('How many gallons would you like? ')
             el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
