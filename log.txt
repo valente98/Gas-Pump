@@ -1,2 +1,9 @@
 type, amount, price
 Regular, 2, 3.98
+Regular, 15, $29.85
+Premium, 44, $131.56
+Regular, 22, $43.78
+Regular, 22, $43.78
+Regular, 2, $3.98
+Regular, 2, $3.98
+Midgrade, 22, $52.14
