@@ -9,12 +9,15 @@ def main():
 
     if gas == '1':
         amount = input('How much gas would you like? ')
+        el_compa_core.convert_gallons(gas, amount)
         print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     elif gas == '2':
         amount = input('How much gas would you like? ')
+        el_compa_core.convert_gallons(gas, amount)
         print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     elif gas == '3':
         amount = input('How much gas would you like? ')
+        el_compa_core.convert_gallons(gas, amount)
         print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     else:
         print('Sorry, invalid choice!')
