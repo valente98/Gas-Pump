@@ -6,7 +6,7 @@ def gas_price(gas, amount):
         return float(amount) * 2.37
     elif gas == '3':
         return float(amount) * 2.99
-def convert_gallons():
+def convert_gallons(gas, amount):
     """ str -> Float """
     if gas == '1':
         return float(amount) / 1.99
