@@ -8,14 +8,17 @@ def main():
         gas = input(msg)
         if gas == '1':
             amount = input('How much gas would you like? ')
+            el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
         elif gas == '2':
             amount = input('How much gas would you like? ')
+            el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
         elif gas == '3':
             amount = input('How much gas would you like? ')
+            el_compa_core.keep_log(gas,amount)
             print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
             break
         else:
