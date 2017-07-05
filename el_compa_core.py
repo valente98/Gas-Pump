@@ -8,28 +8,40 @@ def gas_price(gas, amount):
         return float(amount) * 2.99
 
 def keep_log(gas,amount):
-    R = 'Regular'
-    M = 'Midgrade'
-    P = 'Premium'
-
+    """(str, float) --> str"""
     price = gas_price(gas,amount)
 
     message = ''
     if gas == '1':
-            message ='\n'+ '{}, {}, ${}'.format(R, amount, price)
+        gas_type = 'Regular'
     elif gas == '2':
-        message = '\n'+'{}, {}, ${}'.format(M, amount, price)
+        gas_type = 'Midgrade'
     elif gas == '3':
-            message = '\n' +'{}, {}, ${}'.format(P, amount, price)
+        gas_type = 'Premium'
+    
+    message = '\n{}, {}, ${}'.format(gas_type, amount, price)
     with open('log.txt', 'a') as file:
         file.write(message)
-    return None
+    return gas_type
 
 def in_the_tank():
     left = []
     with open('tank.txt', 'r') as file:
         file.readline()
-        for line in file:
-            split_string = line.split(', ')
-            fruits.append([split_string[0], float(split_string[1]), float(split_string[2])])
+        lines = file.readlines()
+    for line in lines:
+        split_string = line.strip().split(', ')
+        left.append([split_string[0], float(split_string[1]), float(split_string[2])])
     return left
+
+def take_away(gas_type, amount):
+    str_l = ['type, amount_in_tank, price']
+    left = in_the_tank()
+    for item in left:
+        if item[0] == gas_type:
+            item[1] -= amount
+        str_l.append(', '.join(item))
+        message = '\n'.join(join(str_l))
+
+    with open('tank.txt', 'w') as file: 
+        file.write(message)
