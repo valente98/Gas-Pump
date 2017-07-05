@@ -24,6 +24,8 @@ def main():
         else:
             print('Sorry, invalid choice!')
 
+    print('Thank you for shopping with us today! Have a nice day!!')
+
 
 if __name__ == '__main__':
     main()
