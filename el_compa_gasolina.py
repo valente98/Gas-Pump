@@ -8,19 +8,19 @@ def main():
     gas = input(msg)
 
     if gas == '1':
-        amount = input('How much gas would you like?')
-        print('Your total will be $' + el_compa_core.gas_price(gas, amount))
+        amount = input('How much gas would you like? ')
+        print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     elif gas == '2':
-        amount = input('How much gas would you like?')
-        print('Your total will be $' + el_compa_core.gas_price(gas, amount))
+        amount = input('How much gas would you like? ')
+        print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     elif gas == '3':
-        amount = input('How much gas would you like?')
-        print('Your total will be $' + el_compa_core.gas_price(gas, amount))
+        amount = input('How much gas would you like? ')
+        print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
     else:
         print('Sorry, invalid choice!')
 
 
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
 
         
