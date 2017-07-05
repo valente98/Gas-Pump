@@ -24,3 +24,12 @@ def keep_log(gas,amount):
     with open('log.txt', 'a') as file:
         file.write(message)
     return None
+
+def in_the_tank():
+    left = []
+    with open('tank.txt', 'r') as file:
+        file.readline()
+        for line in file:
+            split_string = line.split(', ')
+            fruits.append([split_string[0], float(split_string[1]), float(split_string[2])])
+    return left
