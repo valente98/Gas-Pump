@@ -16,11 +16,11 @@ def keep_log(gas,amount):
 
     message = ''
     if gas == '1':
-            message = '{}, {}, ${}'.format(R, amount, price)
+            message ='\n'+ '{}, {}, ${}'.format(R, amount, price)
     elif gas == '2':
-        message = '{}, {}, ${}'.format(M, amount, price)
+        message = '\n'+'{}, {}, ${}'.format(M, amount, price)
     elif gas == '3':
-            message = '{}, {}, ${}'.format(P, amount, price)
+            message = '\n' +'{}, {}, ${}'.format(P, amount, price)
     with open('log.txt', 'a') as file:
         file.write(message)
     return None
