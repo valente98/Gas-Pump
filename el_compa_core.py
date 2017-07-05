@@ -39,9 +39,11 @@ def take_away(gas_type, amount):
     left = in_the_tank()
     for item in left:
         if item[0] == gas_type:
-            item[1] -= amount
+            item[1] = float(item[1]) - float(amount)
+        item[1] = str(item[1])
+        item[2] = str(item[2])
         str_l.append(', '.join(item))
-        message = '\n'.join(join(str_l))
+        message = '\n'.join(str_l)
 
     with open('tank.txt', 'w') as file: 
         file.write(message)
