@@ -1,0 +1,2 @@
+type, amount, price
+Regular, 2, 3.98
