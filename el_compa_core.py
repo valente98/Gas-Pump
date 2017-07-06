@@ -47,3 +47,17 @@ def take_away(gas_type, amount):
 
     with open('tank.txt', 'w') as file: 
         file.write(message)
+    
+def refill():
+    str_l = ['type, amount_in_tank, price']
+    left = in_the_tank()
+    for item in left:
+        if item[1] < 5000.0:
+            item[1] = 5000.0
+        item[1]=str(item[1])
+        item[2]= str(item[2])
+        str_l.append(', '.join(item))
+        message = '\n'.join(str_l)  
+
+    with open('tank.txt', 'w') as file:
+        file.write(message)
