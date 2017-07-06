@@ -7,11 +7,14 @@ def main():
     \t3. Premium $2.99\n '''
     while True:
         gas = input(msg)
+        if gas == 'refuel':
+            el_compa_core.refill()
+            print('Tanks refueled.')
+            return None
         if gas == '1' or gas == '2' or gas == '3':
             break
         else:
             print('Sorry, invalid choice!')
-    
     amount = input('How many gallons would you like? ')
     print('Your total will be ${:.2f}'.format(el_compa_core.gas_price(gas, amount)))
 
