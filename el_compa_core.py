@@ -24,6 +24,26 @@ def keep_log(gas,amount):
         file.write(message)
     return gas_type
 
+def in_the_log():
+    left = []
+    with open('log.txt', 'r') as file:
+        file.readline()
+        lines = file.readlines()
+    for line in lines:
+        split_string = line.strip().split(', ')
+        left.append([split_string[0], float(split_string[1]), float(split_string[2].strip().replace('$', ''))])
+    return left
+
+def revenue_log():
+    """return float value of total dollars spent"""
+    left = in_the_log()
+    price = 0
+    for item in left:
+        item[2] = float(item[2]) + float(item[2])
+        price += item[2]
+    return price 
+
+
 def in_the_tank():
     left = []
     with open('tank.txt', 'r') as file:
@@ -61,3 +81,4 @@ def refill():
 
     with open('tank.txt', 'w') as file:
         file.write(message)
+
