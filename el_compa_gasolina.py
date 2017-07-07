@@ -7,9 +7,12 @@ def main():
     \t3. Premium $2.99\n '''
     while True:
         gas = input(msg)
-        if gas == 'refuel':
+        if gas.lower() == 'refuel':
             el_compa_core.refill()
             print('Tanks refueled.')
+            return None
+        if gas.lower() == 'revenue':
+            print('your total revenue is ${:.2f}'.format(el_compa_core.revenue_log()))
             return None
         if gas == '1' or gas == '2' or gas == '3':
             break
@@ -20,7 +23,6 @@ def main():
 
     gas_type = el_compa_core.keep_log(gas, amount)
     el_compa_core.take_away(gas_type, amount)
-
     print('Thank you for shopping with us today! Have a nice day!!')
 
 
