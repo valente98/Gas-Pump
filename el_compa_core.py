@@ -1,28 +1,26 @@
 def gas_price(gas, amount):
     """ str -> Float"""
-    if gas == '1':
+    if gas == '1' or gas.lower() == 'one':
         return float(amount) * 1.99
-    elif gas == '2':
+    elif gas == '2' or gas.lower() == 'two':
         return float(amount) * 2.37
-    elif gas == '3':
+    elif gas == '3' or gas.lower() == 'three':
         return float(amount) * 2.99
+def get_gas_type(gas):
+    if gas == '1' or gas.lower() == 'one':
+        gas_type = 'Regular'
+    elif gas == '2' or gas.lower() == 'two':
+        gas_type = 'Midgrade'
+    elif gas == '3' or gas.lower() == 'three':
+        gas_type = 'Premium'
+    return gas_type
 
-def keep_log(gas,amount):
+def keep_log(gas,amount,gas_type):
     """(str, float) --> str"""
     price = gas_price(gas,amount)
-
-    message = ''
-    if gas == '1':
-        gas_type = 'Regular'
-    elif gas == '2':
-        gas_type = 'Midgrade'
-    elif gas == '3':
-        gas_type = 'Premium'
-    
     message = '\n{}, {}, ${}'.format(gas_type, amount, price)
     with open('log.txt', 'a') as file:
         file.write(message)
-    return gas_type
 
 def in_the_log():
     left = []
@@ -59,7 +57,11 @@ def take_away(gas_type, amount):
     left = in_the_tank()
     for item in left:
         if item[0] == gas_type:
-            item[1] = float(item[1]) - float(amount)
+            if float(amount) > (item[1]):
+                print('Sorry! We ran out of this type of gas!')
+                return False
+            else:
+                item[1] = float(item[1]) - float(amount)
         item[1] = str(item[1])
         item[2] = str(item[2])
         str_l.append(', '.join(item))
@@ -67,13 +69,14 @@ def take_away(gas_type, amount):
 
     with open('tank.txt', 'w') as file: 
         file.write(message)
+    return True
     
 def refill():
     str_l = ['type, amount_in_tank, price']
     left = in_the_tank()
     for item in left:
         if item[1] < 5000.0:
-            item[1] = 5000.0
+            item[1] = 10000.0
         item[1]=str(item[1])
         item[2]= str(item[2])
         str_l.append(', '.join(item))
