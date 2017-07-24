@@ -16,9 +16,10 @@ def get_gas_type(gas):
         gas_type = 'Premium'
     return gas_type
 
-def keep_log(gas,amount,gas_type):
+def keep_log(gas,amount,get_gas_type):
     """(str, float) --> str"""
-    log = el_compa_disk.help_keep_log(gas,amount,gas_type)
+    price = gas_price(gas,amount)
+    log = el_compa_disk.help_keep_log(price,amount,get_gas_type)
     return log 
 
 def revenue_log(left):
