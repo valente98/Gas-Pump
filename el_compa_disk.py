@@ -1,6 +1,5 @@
-def help_keep_log():
-    price = gas_price(gas,amount)
-    message = '\n{}, {}, ${}'.format(gas_type, amount, price)
+def help_keep_log(price,amount,get_gas_type):
+    message = '\n{}, {}, ${}'.format(get_gas_type, amount, price)
     with open('log.txt', 'a') as file:
         file.write(message)
         
