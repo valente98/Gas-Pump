@@ -1,4 +1,4 @@
 type, amount_in_tank, price
-Regular, 9913.0, 1.99
-Midgrade, 10020.0, 2.37
+Regular, 9891.0, 1.99
+Midgrade, 9767.0, 2.37
 Premium, 9945.0, 2.99
