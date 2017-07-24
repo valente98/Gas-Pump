@@ -7,3 +7,4 @@ Regular, 22, $43.78
 Regular, 11, $21.89
 Midgrade, 22, $52.14
 Premium, 33, $98.67
+Midgrade, 33, $78.21
